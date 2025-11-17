@@ -47,13 +47,13 @@ class ApplicationTest {
     @Test
     void shouldRouteUsersThroughGateway() {
         String body = """
-        {
-            "id": 1,
-            "name": "name",
-            "email": "name@mail.ru",
-            "age": 123
-        }
-        """;
+                {
+                    "id": 1,
+                    "name": "name",
+                    "email": "name@mail.ru",
+                    "age": 123
+                }
+                """;
 
         userServiceMock.stubFor(get(urlEqualTo("/users/read/1"))
                 .willReturn(aResponse()
@@ -73,11 +73,11 @@ class ApplicationTest {
     @Test
     void shouldRouteNotificationThroughGateway() {
         String body = """
-        {
-            "email": "name@mail.ru",
-            "operation": "CREATE"
-        }
-        """;
+                {
+                    "email": "name@mail.ru",
+                    "operation": "CREATE"
+                }
+                """;
 
         notificationServiceMock.stubFor(post(urlEqualTo("/notification/create"))
                 .willReturn(aResponse()
