@@ -1,5 +1,9 @@
 FROM openjdk:25-ea-11-jdk-bookworm
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
+
+WORKDIR /user-app
+
+COPY target/gateway-service-0.0.1-SNAPSHOT.jar user-app.jar
+
 EXPOSE 8787
-ENTRYPOINT ["java","-jar","/app.jar"]
+
+ENTRYPOINT ["java","-jar","/user-app/user-app.jar"]
